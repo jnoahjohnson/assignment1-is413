@@ -1,0 +1,138 @@
+﻿body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+#main-header {
+    background-color: #3d87cd;
+    color: white;
+    padding-left: 50px;
+    padding: 30px 0 30px 25px;
+    margin: 25px 0;
+    font-size: 1.5em;
+}
+
+.fav-img {
+    max-width: 100%;
+    margin: 0;
+}
+
+.img-container {
+    text-align: center;
+    max-width: 450px;
+    margin: 0 auto;
+    text-align: right;
+}
+
+.caption {
+    margin: 5px;
+    color: #717171;
+}
+
+.content {
+    max-width: 960px;
+    padding: 0 10px;
+}
+
+.content ul {
+    list-style: none;
+    display: flex;
+}
+
+.center {
+    text-align: center;
+}
+
+.content li {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.content h2 {
+    margin: 0 0 20px 0;
+}
+
+.content li > img {
+    width: 50%;
+}
+.container {
+    display: flex;
+    align-items: center;
+    padding: 40px 0;
+    margin: 25px 0;
+    width: 100%;
+    justify-content: center;
+}
+
+.gray {
+    background: #f6f6f6;
+}
+
+h2 {
+    font-size: 2.25em;
+}
+
+#grade-form {
+    display: flex;
+    flex-direction: column;
+}
+
+#grade-form input {
+    margin-bottom: 10px;
+    width: 150px;
+    font-size: 1.25em;
+    padding: 5px;
+    text-align: center;
+}
+
+#grade-form input:focus {
+    outline: none;
+    background: #fbfbfb;
+}
+
+.responsive-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#grade-submit {
+    background: white;
+    box-shadow: none;
+    border: 1px #3d87cd solid;
+    color: #3d87cd;
+    border-radius: 5px;
+    margin: 0 auto;
+    transition: all;
+    transition-duration: .25s;
+}
+
+#grade-submit:hover {
+    background: #3d87cd;
+    color: white;
+}
+
+.responsive-content h2 {
+    margin: 0;
+}
+
+.responsive-content p {
+    margin-bottom: 25px;
+}
+
+#final-grade {
+    text-align: center;
+}
+
+#letter-grade {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin: 0 0 5px 0;
+}
+
+#numeric-grade {
+    margin: 0;
+}
