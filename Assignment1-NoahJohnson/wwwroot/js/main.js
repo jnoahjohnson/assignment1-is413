@@ -3,20 +3,27 @@
 $("#grade-form").submit(e => {
     // Prevent the default submit action
 
-    e.preventDefault();
-
-    let isValid = true;
+    // Track if the form is valid 
+    let isValid = false;
     
     // Get all of the grades for each category
+
     let assignment = $("#assignment").val();
     let project = $("#project").val();
     let quiz = $("#quiz").val();
     let exam = $("#exam").val();
     let intex = $("#intex").val();
 
-    console.log(project);
-    console.log($("#project"));
-    // Calculate the final grade 
+    // Client side form validation 
+    if (assignment <= 100 && assignment >= 0
+        && project <= 100 && project >= 0
+        && quiz <= 100 && quiz >= 0
+        && exam <= 100 && exam >= 0
+        && intex <= 100 && intex >= 0) {
+        isValid = true;
+    } 
+
+    // Calculate the final grade
     let finalGrade = (assignment * .5) + (project * .1) + (quiz * .1) + (exam * .2) + (intex * .1);
 
 
@@ -52,7 +59,6 @@ $("#grade-form").submit(e => {
     // Get the div where the final grade will be shown
     let finalGradeContainer = $("#final-grade");
 
-    // Set the html of the final grade div and then show the element
-    finalGradeContainer.html(`<h3>Final Grade</h3><p id="letter-grade">${letterGrade}</p><p id="numeric-grade">${finalGrade}</p>`);
-    finalGradeContainer.show();
+    //Alert the final grade if the form is valid
+    alert(isValid ? `Final Grade: ${finalGrade}% (${letterGrade})` : 'Form is not valid');
 });

@@ -1,25 +1,28 @@
-﻿@page
-@{
+﻿@{
     ViewBag.Title = "Grade Calculator";
 }
+
+@model Assignment1_NoahJohnson.Models.GradeCalculatorModel
+
 <body>
     <div class="container gray">
         <div class="responsive-content">
             <h2>Grade Calculator</h2>
             <p>Enter the percentage of each grade category to get back your expected final grade!</p>
-            <form id="grade-form">
+            <form id="grade-form" method="post">
                 <label>Assignments</label>
-                <input type="number" id="assignment" min="0" max="100" />
+                <input type="number" id="assignment" asp-for="assignment" />
                 <label>Group Projects</label>
-                <input type="number" id="project" min="0" max="100" />
+                <input type="number" id="project" asp-for="project" />
                 <label>Quizzes</label>
-                <input type="number" id="quiz" min="0" max="100" />
+                <input type="number" id="quiz" asp-for="quiz" />
                 <label>Exams</label>
-                <input type="number" id="exam" min="0" max="100" />
+                <input type="number" id="exam" asp-for="exam" />
                 <label>Intex</label>
-                <input type="number" id="intex" min="0" max="100" />
+                <input type="number" id="intex" asp-for="intex" />
                 <input type="submit" id="grade-submit" />
             </form>
+            <div asp-validation-summary="All"></div>
             <div id="final-grade" hidden>
                 <h2>Final Grade</h2>
             </div>
