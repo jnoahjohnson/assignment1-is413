@@ -1,0 +1,28 @@
+﻿@page
+@{
+    ViewBag.Title = "Grade Calculator";
+}
+<body>
+    <div class="container gray">
+        <div class="responsive-content">
+            <h2>Grade Calculator</h2>
+            <p>Enter the percentage of each grade category to get back your expected final grade!</p>
+            <form id="grade-form">
+                <label>Assignments</label>
+                <input type="number" id="assignment" min="0" max="100" />
+                <label>Group Projects</label>
+                <input type="number" id="project" min="0" max="100" />
+                <label>Quizzes</label>
+                <input type="number" id="quiz" min="0" max="100" />
+                <label>Exams</label>
+                <input type="number" id="exam" min="0" max="100" />
+                <label>Intex</label>
+                <input type="number" id="intex" min="0" max="100" />
+                <input type="submit" id="grade-submit" />
+            </form>
+            <div id="final-grade" hidden>
+                <h2>Final Grade</h2>
+            </div>
+        </div>
+    </div>
+</body>

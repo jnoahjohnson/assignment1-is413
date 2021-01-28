@@ -1,19 +1,21 @@
-﻿// Get the submit button
-submit = document.getElementById("grade-submit");
+﻿// Add an event listener to the submit button
 
-// Add an event listener to the submit button
-
-submit.addEventListener("click", e => {
+$("#grade-form").submit(e => {
     // Prevent the default submit action
+
     e.preventDefault();
+
+    let isValid = true;
     
     // Get all of the grades for each category
-    let assignment = parseInt(document.getElementById("assignment").value);
-    let project = parseInt(document.getElementById("project").value);
-    let quiz = parseInt(document.getElementById("quiz").value);
-    let exam = parseInt(document.getElementById("exam").value);
-    let intex = parseInt(document.getElementById("intex").value);
+    let assignment = $("#assignment").val();
+    let project = $("#project").val();
+    let quiz = $("#quiz").val();
+    let exam = $("#exam").val();
+    let intex = $("#intex").val();
 
+    console.log(project);
+    console.log($("#project"));
     // Calculate the final grade 
     let finalGrade = (assignment * .5) + (project * .1) + (quiz * .1) + (exam * .2) + (intex * .1);
 
@@ -48,9 +50,9 @@ submit.addEventListener("click", e => {
     }
 
     // Get the div where the final grade will be shown
-    let finalGradeContainer = document.getElementById("final-grade");
+    let finalGradeContainer = $("#final-grade");
 
     // Set the html of the final grade div and then show the element
-    finalGradeContainer.innerHTML = `<h3>Final Grade</h3><p id="letter-grade">${letterGrade}</p><p id="numeric-grade">${finalGrade}</p>`
-    finalGradeContainer.hidden = false;
+    finalGradeContainer.html(`<h3>Final Grade</h3><p id="letter-grade">${letterGrade}</p><p id="numeric-grade">${finalGrade}</p>`);
+    finalGradeContainer.show();
 });
